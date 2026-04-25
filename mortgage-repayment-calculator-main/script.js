@@ -5,14 +5,18 @@ class App {
 addInputListeners() {
     this.textInputMortgageAmount.addEventListener("input", () => {
         this.symbolMoney.classList.remove("bg-red", "text-white");
+       
+
     });
 
     this.textInputTerm.addEventListener("input", () => {
         this.mortgageYears.classList.remove("bg-red", "text-white");
+       
     });
 
     this.textInputInterestRate.addEventListener("input", () => {
         this.mortgageInterest.classList.remove("bg-red", "text-white");
+        
     });
     this.radiogroup.addEventListener("change", () => {
         this.removeAllErrorMessages();
@@ -36,6 +40,7 @@ addInputListeners() {
         this.totalRepaymentElement = document.querySelector("#total-repayment");
         this.initialState = document.querySelector(".initial_state");
          this.resultContainer = document.querySelector(".result__container");
+        
 
    
         //  this.initialState.style.display = "block";
@@ -68,6 +73,7 @@ addInputListeners() {
             this.symbolMoney.classList.remove("bg-red-500", "text-white");
             this.mortgageInterest.classList.remove("bg-red-500", "text-white");
             this.mortgageYears.classList.remove("bg-red-500", "text-white");
+            
             this.removeAllErrorMessages();
 
 
@@ -102,6 +108,7 @@ addInputListeners() {
                 
                 isValid = false;
                 this.symbolMoney.classList.add("bg-red", "text-white");
+                
           
             }
             
@@ -110,12 +117,14 @@ addInputListeners() {
                
                 isValid = false;
                 this.mortgageYears.classList.add("bg-red", "text-white");
+               
             
             }
 
             if (isNaN(interest)|| interest <= 0 || interest > 100) {
                 isValid = false;
                 this.mortgageInterest.classList.add("bg-red", "text-white");
+                
            
             }
 
@@ -209,6 +218,10 @@ addInputListeners() {
     this.symbolMoney.classList.remove("bg-red", "text-white");
     this.mortgageYears.classList.remove("bg-red", "text-white");
     this.mortgageInterest.classList.remove("bg-red", "text-white");
+    this.amountWrapper.classList.remove("border-red");
+    this.termWrapper.classList.remove("border-red");
+    this.interestWrapper.classList.remove("border-red");
+
 
     // 5. Remove error messages
     this.removeAllErrorMessages();
